@@ -68,8 +68,12 @@
 }
 
 .logo img {
-  width: 120px; opacity: 0.95;
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
+
 input:focus {
   border-color: #2e7d32;
   outline: none;
@@ -82,10 +86,10 @@ button:hover {
   transform: scale(1.02);
 }
 
-.field {
-  margin-bottom: 12px;
+.field:last-child {
+  margin-bottom: 20px;
 }
-
+   
 select, input, textarea {
   width: 100%;
   padding: 10px;
@@ -163,8 +167,9 @@ select, input, textarea {
 </select>
       </div>
     <div>
- <label>Catatan/Komentar/Pertanyaan kepada Dewan PKB GPIB</label>
-    <textarea name="catatan" placeholder="Komentar / Saran (Opsional)"></textarea>
+ <label>Catatan/Komentar/Pertanyaan kepada Dewan PKB GPIB (Opsional)</label>
+    <textarea name="catatan" rows="3" placeholder="Komentar / Saran (Opsional)"></textarea>
+   
   </div>
 
     <button type="submit">Lanjut request join Grup WA "KSB/KP3 PKB GPIB Sinodal (Aktif)"</button>
@@ -172,7 +177,8 @@ select, input, textarea {
   </form>
 
   <div class="note">
-    Setelah itu Anda akan diarahkan ke WAG tsb, silahkan klik "Request to Join". Terima Kasih, Tuhan memberkati pelayanan kita bersama.
+    Setelah itu Anda akan diarahkan ke WAG tsb dan klik "Request to Join". 
+    Terima Kasih atas kerjasamanya! Tuhan memberkati pelayanannya.
   </div>
 </div>
 
