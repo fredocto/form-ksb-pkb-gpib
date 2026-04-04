@@ -13,7 +13,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px 0;
       margin: 0;
     }
 
@@ -68,9 +69,44 @@
 }
 
 .logo img {
-  width: 120px; opacity: 0.95;
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
+input:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+    button {
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.field:last-child {
+  margin-bottom: 20px;
+}
+   
+select, input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+    label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
 
   </style>
 </head>
@@ -86,17 +122,73 @@
   <h2>Form Khusus KSB PKB Jemaat dan KP3/KORWIL PKB MUPEL GPIB</h2>
 
   <form id="myForm">
-    <input name="nama" placeholder="Nama" required>
-    <input name="jemaat" placeholder="Jemaat" required>
-    <input name="jabatan" placeholder="Jabatan">
-    <input name="peran" placeholder="Peran MUPEL">
+<div class="field">
+  <label>MUPEL</label>
+  <select name="mupel" id="mupel" required>
+    <option value="">Pilih MUPEL</option>
+  <option value="DKI Jakarta Pusat">DKI Jakarta Pusat</option>
+  <option value="DKI Jakarta Utara">DKI Jakarta Utara</option>
+  <option value="DKI Jakarta Selatan">DKI Jakarta Selatan</option>
+  <option value="DKI Jakarta Barat">DKI Jakarta Barat</option>
+  <option value="DKI Jakarta Timur">DKI Jakarta Timur</option>
+    
+  </select>
+</div>
+  
+<div class="field">
+  <label>Jemaat</label>
+  <select name="jemaat" id="jemaat" required>
+    <option value="">Pilih Jemaat</option>
+  </select>
+</div>
+
+<div class="field">
+  <label>Nama</label>
+  <input name="nama" placeholder="Masukkan nama lengkap" required>
+</div>
+    <div class="field">
+     <label>Nomor WhatsApp</label>
     <input name="wa" placeholder="No WhatsApp" required>
+    </div>
+    
+<div class="field">
+<label>Jabatan dalam PKB Jemaat</label>
+<select name="jabatan">
+  <option value="">Pilih Jabatan</option>
+  <option>Ketua</option>
+  <option>Wakil Ketua</option>
+  <option>Sekretaris</option>
+  <option>Wakil Sekretaris</option>
+  <option>Bendahara</option>
+  <option>Wakil Bendahara</option>
+</select>
+  <div class="field">
+
+    <div>
+      <label>Peran dalam PKB MUPEL</label>
+    <select name="peran">
+  <option value="">Tidak Ada</option>
+  <option>KP3/KORWIL</option>
+  <option>Wakil KP3/KORWIL</option>
+  <option>Sekretaris KP3/KORWIL</option>
+  <option>Wakil Sekretaris KP3/KORWIL</option>
+  <option>Bendahara KP3/KORWIL</option>
+  <option>Wakil Bendahara KP3/KORWIL</option>
+</select>
+      <div class="field">
+    <div>
+ <label>Catatan/Komentar/Pertanyaan kepada Dewan PKB GPIB (Opsional)</label>
+    <textarea name="catatan" rows="4" placeholder="Komentar / Saran (Opsional)"></textarea>
+   
+  </div>
 
     <button type="submit">Lanjut request join Grup WA "KSB/KP3 PKB GPIB Sinodal (Aktif)"</button>
+    
   </form>
 
   <div class="note">
-    Setelah itu Anda akan diarahkan ke WAG tsb, silahkan klik "Request to Join". Terima Kasih, Tuhan memberkati pelayanan kita bersama.
+    Setelah itu Anda akan diarahkan ke WAG tsb dan klik "Request to Join". 
+    Terima Kasih atas kerjasamanya! Tuhan memberkati pelayanannya.
   </div>
 </div>
 
@@ -106,14 +198,44 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
   const formData = new FormData(this);
 
-  fetch("https://script.google.com/macros/s/AKfycbzjLiRYWj3KlOtQ_WRIJasUJ4oPRR9a1m95McgJIafDfXsWVfiIbrkKej0VD_g6pRgrhg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
     method: "POST",
     body: formData
   }).catch(() => {});
 
   window.location.href = "https://chat.whatsapp.com/BDLzpoNa2s38kn2ZEbAm16";
 });
+
+
+  
+</script>
+<script>
+const dataJemaat = {
+  "DKI Jakarta Pusat": ["Bethesda", "Paulus", "Immanuel"],
+  "DKI Jakarta Utara": ["Sion", "Ebenhaezer"],
+  "DKI Jakarta Selatan": ["Filadelfia", "Maranatha"]
+};
 </script>
 
+  <script>
+document.getElementById("mupel").addEventListener("change", function() {
+  const jemaatSelect = document.getElementById("jemaat");
+  const selected = this.value;
+
+  jemaatSelect.innerHTML = '<option value="">Pilih Jemaat</option>';
+
+  if (dataJemaat[selected]) {
+    dataJemaat[selected].forEach(j => {
+      const option = document.createElement("option");
+      option.value = j;
+      option.textContent = j;
+      jemaatSelect.appendChild(option);
+    });
+  }
+});
+</script>
+
+  
+  
 </body>
 </html>
