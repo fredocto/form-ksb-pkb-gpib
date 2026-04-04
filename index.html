@@ -1,26 +1,119 @@
-<form id="myForm">
-  <input name="nama" placeholder="Nama" required><br><br>
-  <input name="jemaat" placeholder="Jemaat" required><br><br>
-  <input name="jabatan" placeholder="Jabatan"><br><br>
-  <input name="peran" placeholder="Peran MUPEL"><br><br>
-  <input name="wa" placeholder="No WhatsApp" required><br><br>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form PKB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <button type="submit">Lanjut</button>
-</form>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1b5e20;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+.logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.logo img {
+  width: 120px; opacity: 0.95;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="logo">
+    <img src="logo.png" alt="PKB GPIB">
+  </div>
+
+  <h2>Form Khusus KSB PKB Jemaat atau KP3/KORWIL PKB MUPEL GPIB</h2>
+
+  <form id="myForm">
+    <input name="nama" placeholder="Nama" required>
+    <input name="jemaat" placeholder="Jemaat" required>
+    <input name="jabatan" placeholder="Jabatan">
+    <input name="peran" placeholder="Peran MUPEL">
+    <input name="wa" placeholder="No WhatsApp" required>
+
+    <button type="submit">Lanjut request join Grup WA "KSB/KP3 PKB GPIB Sinodal (Aktif)"</button>
+  </form>
+
+  <div class="note">
+    Setelah klik lanjut, Anda akan diarahkan ke Grup WhatsApp tsb. Terima Kasih, Tuhan memberkati pelayanan kita bersama.
+  </div>
+</div>
 
 <script>
 document.getElementById("myForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // 🔥 ini yang penting
+  e.preventDefault();
 
   const formData = new FormData(this);
 
   fetch("https://script.google.com/macros/s/AKfycbzjLiRYWj3KlOtQ_WRIJasUJ4oPRR9a1m95McgJIafDfXsWVfiIbrkKej0VD_g6pRgrhg/exec", {
     method: "POST",
     body: formData
-  })
-  .catch(() => {}) // tetap lanjut walau error
+  }).catch(() => {});
 
-  // 🔥 redirect langsung (tidak nunggu fetch)
   window.location.href = "https://chat.whatsapp.com/C72YFPsA89R3U44PWSFuBu";
 });
 </script>
+
+</body>
+</html>
