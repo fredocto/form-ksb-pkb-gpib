@@ -4,15 +4,13 @@
   <title>Form KSB/KP3 PKB GPIB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f4f6f8;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
       padding: 20px 0;
       margin: 0;
@@ -20,24 +18,62 @@
 
     .card {
       background: white;
-      padding: 30px;
+      padding: 40px 30px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 400px;
     }
 
+    .logo {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .logo img {
+      width: 120px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
+      font-size: 18px;
     }
 
-    input {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 2px; /* 🔥 rapat ke input */
+      font-size: 14px;
+    }
+
+    select, input, textarea {
       width: 100%;
       padding: 10px;
-      margin: 8px 0;
       border-radius: 8px;
       border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2e7d32;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     button {
@@ -47,67 +83,23 @@
       color: white;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
-      margin-top: 10px;
+      font-size: 15px;
       cursor: pointer;
+      margin-top: 10px;
+      transition: 0.2s;
     }
 
     button:hover {
       background: #1b5e20;
+      transform: scale(1.02);
     }
 
     .note {
       font-size: 12px;
       color: #777;
-      margin-top: 10px;
+      margin-top: 12px;
       text-align: center;
     }
-
-.logo {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.logo img {
-  width: 120px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-input:focus {
-  border-color: #2e7d32;
-  outline: none;
-}
-    button {
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: scale(1.02);
-}
-
-.field:last-child {
-  margin-bottom: 20px;
-}
-   
-select, input, textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-    label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-.field {
-  margin-bottom: 20px;
-}
-
   </style>
 </head>
 
@@ -122,74 +114,78 @@ select, input, textarea {
   <h2>Form Khusus KSB PKB Jemaat dan KP3/KORWIL PKB MUPEL GPIB</h2>
 
   <form id="myForm">
-<div class="field">
-  <label>MUPEL</label>
-  <select name="mupel" id="mupel" required>
-    <option value="">Pilih MUPEL</option>
-  <option value="DKI Jakarta Pusat">DKI Jakarta Pusat</option>
-  <option value="DKI Jakarta Utara">DKI Jakarta Utara</option>
-  <option value="DKI Jakarta Selatan">DKI Jakarta Selatan</option>
-  <option value="DKI Jakarta Barat">DKI Jakarta Barat</option>
-  <option value="DKI Jakarta Timur">DKI Jakarta Timur</option>
-    
-  </select>
-</div>
-  
-<div class="field">
-  <label>Jemaat</label>
-  <select name="jemaat" id="jemaat" required>
-    <option value="">Pilih Jemaat</option>
-  </select>
-</div>
 
-<div class="field">
-  <label>Nama</label>
-  <input name="nama" placeholder="Masukkan nama lengkap" required>
-</div>
     <div class="field">
-     <label>Nomor WhatsApp</label>
-    <input name="wa" placeholder="No WhatsApp" required>
+      <label>MUPEL</label>
+      <select name="mupel" id="mupel" required>
+        <option value="">Pilih MUPEL</option>
+        <option>DKI Jakarta Pusat</option>
+        <option>DKI Jakarta Utara</option>
+        <option>DKI Jakarta Selatan</option>
+        <option>DKI Jakarta Barat</option>
+        <option>DKI Jakarta Timur</option>
+      </select>
     </div>
-    
-<div class="field">
-<label>Jabatan dalam PKB Jemaat</label>
-<select name="jabatan">
-  <option value="">Pilih Jabatan</option>
-  <option>Ketua</option>
-  <option>Wakil Ketua</option>
-  <option>Sekretaris</option>
-  <option>Wakil Sekretaris</option>
-  <option>Bendahara</option>
-  <option>Wakil Bendahara</option>
-</select>
-  <div class="field">
 
-    <div>
+    <div class="field">
+      <label>Jemaat</label>
+      <select name="jemaat" id="jemaat" required>
+        <option value="">Pilih Jemaat</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Nama Lengkap</label>
+      <input name="nama" placeholder="Masukkan nama lengkap" required>
+    </div>
+
+    <div class="field">
+      <label>Nomor WhatsApp</label>
+      <input name="wa" placeholder="08xxxxxxxxxx" required>
+    </div>
+
+    <div class="field">
+      <label>Jabatan dalam PKB Jemaat</label>
+      <select name="jabatan">
+        <option value="">Pilih Jabatan</option>
+        <option>Ketua</option>
+        <option>Wakil Ketua</option>
+        <option>Sekretaris</option>
+        <option>Wakil Sekretaris</option>
+        <option>Bendahara</option>
+        <option>Wakil Bendahara</option>
+      </select>
+    </div>
+
+    <div class="field">
       <label>Peran dalam PKB MUPEL</label>
-    <select name="peran">
-  <option value="">Tidak Ada</option>
-  <option>KP3/KORWIL</option>
-  <option>Wakil KP3/KORWIL</option>
-  <option>Sekretaris KP3/KORWIL</option>
-  <option>Wakil Sekretaris KP3/KORWIL</option>
-  <option>Bendahara KP3/KORWIL</option>
-  <option>Wakil Bendahara KP3/KORWIL</option>
-</select>
-      <div class="field">
-    <div>
- <label>Catatan/Komentar/Pertanyaan kepada Dewan PKB GPIB (Opsional)</label>
-    <textarea name="catatan" rows="4" placeholder="Komentar / Saran (Opsional)"></textarea>
-   
-  </div>
+      <select name="peran">
+        <option value="">Tidak Ada</option>
+        <option>KP3/KORWIL</option>
+        <option>Wakil KP3/KORWIL</option>
+        <option>Sekretaris KP3/KORWIL</option>
+        <option>Wakil Sekretaris KP3/KORWIL</option>
+        <option>Bendahara KP3/KORWIL</option>
+        <option>Wakil Bendahara KP3/KORWIL</option>
+      </select>
+    </div>
 
-    <button type="submit">Lanjut request join Grup WA "KSB/KP3 PKB GPIB Sinodal (Aktif)"</button>
-    
+    <div class="field">
+      <label>Catatan / Komentar (Opsional)</label>
+      <textarea name="catatan" rows="4" placeholder="Komentar / Saran"></textarea>
+    </div>
+
+    <button type="submit">
+      Lanjut request join Grup WA "KSB/KP3 PKB GPIB Sinodal (Aktif)"
+    </button>
+
   </form>
 
   <div class="note">
-    Setelah itu Anda akan diarahkan ke WAG tsb dan klik "Request to Join". 
-    Terima Kasih atas kerjasamanya! Tuhan memberkati pelayanannya.
+    Setelah itu Anda akan diarahkan ke WAG dan klik "Request to Join".<br>
+    Terima kasih. Tuhan memberkati 🙏
   </div>
+
 </div>
 
 <script>
@@ -205,19 +201,15 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
   window.location.href = "https://chat.whatsapp.com/BDLzpoNa2s38kn2ZEbAm16";
 });
-
-
-  
 </script>
+
 <script>
 const dataJemaat = {
   "DKI Jakarta Pusat": ["Bethesda", "Paulus", "Immanuel"],
   "DKI Jakarta Utara": ["Sion", "Ebenhaezer"],
   "DKI Jakarta Selatan": ["Filadelfia", "Maranatha"]
 };
-</script>
 
-  <script>
 document.getElementById("mupel").addEventListener("change", function() {
   const jemaatSelect = document.getElementById("jemaat");
   const selected = this.value;
@@ -235,7 +227,5 @@ document.getElementById("mupel").addEventListener("change", function() {
 });
 </script>
 
-  
-  
 </body>
 </html>
