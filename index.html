@@ -119,11 +119,37 @@
       <label>MUPEL</label>
       <select name="mupel" id="mupel" required>
         <option value="">Pilih MUPEL</option>
-        <option>DKI Jakarta Pusat</option>
-        <option>DKI Jakarta Utara</option>
-        <option>DKI Jakarta Selatan</option>
-        <option>DKI Jakarta Barat</option>
-        <option>DKI Jakarta Timur</option>
+
+  <option>01 - MUPEL SULSELBARA</option>
+  <option>02 - MUPEL BALI-NTB</option>
+  <option>03 - MUPEL KALTIM I</option>
+  <option>04 - MUPEL KALTIM II</option>
+  <option>05 - MUPEL KALTARA BERKAT</option>
+
+  <option>06 - MUPEL KALBAR</option>
+  <option>07 - MUPEL KALSELTENG</option>
+  <option>08 - MUPEL JABAR I</option>
+  <option>09 - MUPEL JABAR II</option>
+  <option>10 - MUPEL JATENG-DIY</option>
+
+  <option>11 - MUPEL JATIM</option>
+  <option>12 - MUPEL JAKARTA PUSAT</option>
+  <option>13 - MUPEL JAKARTA UTARA</option>
+  <option>14 - MUPEL JAKARTA SELATAN</option>
+  <option>15 - MUPEL JAKARTA BARAT</option>
+
+  <option>16 - MUPEL JAKARTA TIMUR</option>
+  <option>17 - MUPEL BEKASI</option>
+  <option>18 - MUPEL BANTEN</option>
+  <option>19 - MUPEL LAMPUNG</option>
+  <option>20 - MUPEL SUMUT-ACEH</option>
+
+  <option>21 - MUPEL SUMSEL</option>
+  <option>22 - MUPEL JAMBI</option>
+  <option>23 - MUPEL KEP. BABEL</option>
+  <option>24 - MUPEL KEPRI</option>
+  <option>25 - MUPEL SARIBU</option>
+        
       </select>
     </div>
 
@@ -205,10 +231,54 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
 <script>
 const dataJemaat = {
-  "DKI Jakarta Pusat": ["Bethesda", "Paulus", "Immanuel"],
-  "DKI Jakarta Utara": ["Sion", "Ebenhaezer"],
-  "DKI Jakarta Selatan": ["Filadelfia", "Maranatha"]
+  "01 - MUPEL SULSELBARA": [
+  "BETHANIA - Makassar",
+  "BUKIT ZAITUN - Makassar",
+  "BAHTERA KASIH - Makassar",
+  "IMMANUEL - Makassar",
+  "MANGNGAMASEANG - Makassar",
+  "PASSAREANG - Makassar",
+  "BETHEL - Raha",
+  "IMMANUEL - Baubau",
+  "IMMANUEL - Majene",
+  "IMMANUEL - Watampone",
+  "IMMANUEL - Parepare",
+  "PELITA BARAS - Palu",
+  "SUMBER KASIH - Kendari",
+  "KANA TOJENG - Gowa",
+  "SOLA FIDE SARUDU - Palu",
+  "SINAR KASIH BARAS - Pasangkayu"
+],
+  "02 - MUPEL BALI-NTB": [],
+  "03 - MUPEL KALTIM I": [],
+  "04 - MUPEL KALTIM II": [],
+  "05 - MUPEL KALTARA BERKAT": [],
+
+  "06 - MUPEL KALBAR": [],
+  "07 - MUPEL KALSELTENG": [],
+  "08 - MUPEL JABAR I": [],
+  "09 - MUPEL JABAR II": [],
+  "10 - MUPEL JATENG-DIY": [],
+
+  "11 - MUPEL JATIM": [],
+  "12 - MUPEL JAKARTA PUSAT": [],
+  "13 - MUPEL JAKARTA UTARA": [],
+  "14 - MUPEL JAKARTA SELATAN": [],
+  "15 - MUPEL JAKARTA BARAT": [],
+
+  "16 - MUPEL JAKARTA TIMUR": [],
+  "17 - MUPEL BEKASI": [],
+  "18 - MUPEL BANTEN": [],
+  "19 - MUPEL LAMPUNG": [],
+  "20 - MUPEL SUMUT-ACEH": [],
+
+  "21 - MUPEL SUMSEL": [],
+  "22 - MUPEL JAMBI": [],
+  "23 - MUPEL KEP. BABEL": [],
+  "24 - MUPEL KEPRI": [],
+  "25 - MUPEL SARIBU": []
 };
+
 
 document.getElementById("mupel").addEventListener("change", function() {
   const jemaatSelect = document.getElementById("jemaat");
