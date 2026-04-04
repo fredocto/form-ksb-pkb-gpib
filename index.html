@@ -13,7 +13,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px 0;
       margin: 0;
     }
 
@@ -136,12 +137,12 @@ select, input, textarea {
   <label>Nama</label>
   <input name="nama" placeholder="Masukkan nama lengkap" required>
 </div>
-<div>
+    <div class="field">
      <label>Nomor WhatsApp</label>
     <input name="wa" placeholder="No WhatsApp" required>
     </div>
     
-<div>
+<div class="field">
 <label>Jabatan dalam PKB Jemaat</label>
 <select name="jabatan">
   <option value="">Pilih Jabatan</option>
@@ -152,7 +153,7 @@ select, input, textarea {
   <option>Bendahara</option>
   <option>Wakil Bendahara</option>
 </select>
-  </div>
+  <div class="field">
 
     <div>
       <label>Peran dalam PKB MUPEL</label>
@@ -165,10 +166,10 @@ select, input, textarea {
   <option>Bendahara KP3/KORWIL</option>
   <option>Wakil Bendahara KP3/KORWIL</option>
 </select>
-      </div>
+      <div class="field">
     <div>
  <label>Catatan/Komentar/Pertanyaan kepada Dewan PKB GPIB (Opsional)</label>
-    <textarea name="catatan" rows="3" placeholder="Komentar / Saran (Opsional)"></textarea>
+    <textarea name="catatan" rows="4" placeholder="Komentar / Saran (Opsional)"></textarea>
    
   </div>
 
