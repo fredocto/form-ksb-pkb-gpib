@@ -98,6 +98,15 @@ select, input, textarea {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+    label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
 
   </style>
 </head>
@@ -189,7 +198,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
   const formData = new FormData(this);
 
-  fetch("https://script.google.com/macros/s/AKfycbzjLiRYWj3KlOtQ_WRIJasUJ4oPRR9a1m95McgJIafDfXsWVfiIbrkKej0VD_g6pRgrhg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
     method: "POST",
     body: formData
   }).catch(() => {});
