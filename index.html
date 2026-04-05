@@ -238,18 +238,27 @@
 </div>
 
 <script>
-document.getElementById("myForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.getElementById("mupel").addEventListener("change", function() {
+  const jemaatSelect = document.getElementById("jemaat");
+  const selected = this.value;
 
-  const formData = new FormData(this);
+  // Ambil nama MUPEL tanpa nomor
+  let namaMupel = selected.replace(/^\d+\s*-\s*/, "");
 
-  fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
-    method: "POST",
-    body: formData
-  }).catch(() => {});
+  // Reset option pertama (placeholder dinamis)
+  jemaatSelect.innerHTML = `<option value="">Pilih Jemaat pada ${namaMupel}</option>`;
 
-  window.location.href = "https://chat.whatsapp.com/BDLzpoNa2s38kn2ZEbAm16";
+  // Isi jemaat sesuai MUPEL
+  if (dataJemaat[selected]) {
+    dataJemaat[selected].forEach(j => {
+      const option = document.createElement("option");
+      option.value = j;
+      option.textContent = j;
+      jemaatSelect.appendChild(option);
+    });
+  }
 });
+
 </script>
 
 <script>
