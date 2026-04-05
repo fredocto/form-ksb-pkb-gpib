@@ -98,8 +98,9 @@
 
   <!-- 🔵 PAGE 3 -->
   <div id="page3" class="page">
-    <h2>Pilih Jemaat</h2>
-
+  
+<h2>Pilih Jemaat</h2>
+<p id="infoMupel" class="subtitle"></p>
     <select id="jemaat">
       <option value="">Pilih Jemaat</option>
     </select>
@@ -143,6 +144,10 @@ document.getElementById("mupel").addEventListener("change", function() {
       });
     }
 
+    let namaMupel = selected.replace(/^\d+\s*-\s*/, "");
+
+document.getElementById("infoMupel").textContent =
+  "di " + namaMupel;
     showPage(3);
   }
 });
