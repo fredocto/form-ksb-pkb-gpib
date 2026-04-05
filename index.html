@@ -246,7 +246,7 @@ document.getElementById("mupel").addEventListener("change", function() {
   let namaMupel = selected.replace(/^\d+\s*-\s*/, "");
 
   // Reset option pertama (placeholder dinamis)
-  jemaatSelect.innerHTML = `<option value="">Pilih Jemaat pada ${namaMupel}</option>`;
+  jemaatSelect.innerHTML = `<option value="">Pilih Jemaat di ${namaMupel}</option>`;
 
   // Isi jemaat sesuai MUPEL
   if (dataJemaat[selected]) {
