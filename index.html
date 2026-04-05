@@ -206,22 +206,26 @@ function showPage(pageNumber) {
 
   // 🔥 PAGE 5 (INI DIPISAH)
   if (pageNumber === 5) {
-    const mupel = localStorage.getItem("mupel") || "-";
-    const jemaat = localStorage.getItem("jemaat") || "-";
-    const nama = localStorage.getItem("nama") || "-";
-    const wa = localStorage.getItem("wa") || "-";
-    const jabatan = localStorage.getItem("jabatan") || "-";
-    const peran = localStorage.getItem("peran") || "-";
+  const mupel = localStorage.getItem("mupel") || "-";
+  const jemaat = localStorage.getItem("jemaat") || "-";
+  const nama = localStorage.getItem("nama") || "-";
+  const wa = localStorage.getItem("wa") || "-";
+  const jabatan = localStorage.getItem("jabatan") || "-";
+  const peran = localStorage.getItem("peran") || "-";
 
-    document.getElementById("reviewBox").innerHTML = `
-      <b>MUPEL:</b><br>${mupel}<br><br>
-      <b>Jemaat:</b><br>${jemaat}<br><br>
-      <b>Nama:</b><br>${nama}<br><br>
-      <b>WhatsApp:</b><br>${wa}<br><br>
-      <b>Jabatan:</b><br>${jabatan}<br><br>
-      <b>Peran:</b><br>${peran}
-    `;
-  }
+  let namaMupel = mupel.replace(/^\d+\s*-\s*/, "");
+
+  document.getElementById("reviewBox").innerHTML = `
+    <b>
+      Pengurus PKB GPIB ${jemaat}<br>
+      MUPEL ${namaMupel}<br><br>
+
+      Nama: ${nama} (${jabatan})<br>
+      WhatsApp: ${wa}<br><br>
+
+      Peran pada MUPEL: ${peran}
+    </b>
+  `;
 }
 
 
