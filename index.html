@@ -166,18 +166,33 @@ function showPage(pageNumber) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.getElementById("page" + pageNumber).classList.add("active");
 
-  // 🔥 KHUSUS SAAT MASUK PAGE 3
+  // 🔵 PAGE 3
   if (pageNumber === 3) {
     const mupel = localStorage.getItem("mupel");
 
     if (mupel) {
       let namaMupel = mupel.replace(/^\d+\s*-\s*/, "");
-      document.getElementById("infoMupel").textContent =
-        namaMupel;
+      document.getElementById("infoMupel").textContent = namaMupel;
+    }
+  }
+
+  // 🔥 PAGE 4 (INI YANG TADI TIDAK JALAN)
+  if (pageNumber === 4) {
+    const mupel = localStorage.getItem("mupel");
+    const jemaat = localStorage.getItem("jemaat");
+
+    if (mupel) {
+      let namaMupel = mupel.replace(/^\d+\s*-\s*/, "");
+      document.getElementById("infoMupel2").textContent =
+        "MUPEL " + namaMupel;
+    }
+
+    if (jemaat) {
+      document.getElementById("infoJemaat").textContent =
+        "PKB GPIB " + jemaat;
     }
   }
 }
-
 
 // 🔥 AUTO NEXT MUPEL
 document.getElementById("mupel").addEventListener("change", function() {
@@ -244,21 +259,6 @@ document.getElementById("jemaat").addEventListener("change", function() {
 }
 
 
-  if (pageNumber === 4) {
-  const mupel = localStorage.getItem("mupel");
-  const jemaat = localStorage.getItem("jemaat");
-
-  if (mupel) {
-    let namaMupel = mupel.replace(/^\d+\s*-\s*/, "");
-    document.getElementById("infoMupel2").textContent =
-      "MUPEL " + namaMupel;
-  }
-
-  if (jemaat) {
-    document.getElementById("infoJemaat").textContent =
-      "PKB GPIB " + jemaat;
-  }
-}
   
 </script>
 
