@@ -318,20 +318,19 @@ function submitFinal() {
   formData.append("jabatan", localStorage.getItem("jabatan") || "");
   formData.append("peran", localStorage.getItem("peran") || "");
 
-  fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
-    method: "POST",
-    body: formData
-  })
-  .then(() => {
-    // 🔥 pindah ke success page
-    showPage(6);
+fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
+  method: "POST",
+  body: formData,
+  mode: "no-cors"
+})
+.then(() => {
+  showPage(6);
+  localStorage.clear();
+})
+.catch(() => {
+  alert("Gagal kirim data, coba lagi");
+});
 
-    // 🔥 optional: bersihkan data
-    localStorage.clear();
-  })
-  .catch(() => {
-    alert("Gagal kirim data, coba lagi");
-  });
 }
 function joinWA() {
   window.open("https://chat.whatsapp.com/C72YFPsA89R3U44PWSFuBu", "_blank");
