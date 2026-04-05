@@ -163,6 +163,19 @@
   <button class="back" onclick="showPage(4)">Back</button>
   <button onclick="submitFinal()">Submit</button>
 </div>
+
+<div id="page6" class="page">
+  <h2>Terima Kasih 🙏</h2>
+
+  <p class="subtitle">
+    Data Anda telah berhasil dikirim.<br>
+    Silakan bergabung ke WAG resmi PKB GPIB.
+  </p>
+
+  <button onclick="joinWA()" style="font-size:18px; padding:16px;">
+    JOIN WAG SEKARANG
+  </button>
+</div>
   
 <script>
 
@@ -296,9 +309,33 @@ document.getElementById("jemaat").addEventListener("change", function() {
 
 }
 function submitFinal() {
-  alert("Data akan dikirim ke Google Sheets & lanjut ke halaman sukses");
-}
+  const formData = new FormData();
 
+  formData.append("mupel", localStorage.getItem("mupel") || "");
+  formData.append("jemaat", localStorage.getItem("jemaat") || "");
+  formData.append("nama", localStorage.getItem("nama") || "");
+  formData.append("wa", localStorage.getItem("wa") || "");
+  formData.append("jabatan", localStorage.getItem("jabatan") || "");
+  formData.append("peran", localStorage.getItem("peran") || "");
+
+  fetch("https://script.google.com/macros/s/AKfycbzjLiRYWj3KlOtQ_WRIJasUJ4oPRR9a1m95McgJIafDfXsWVfiIbrkKej0VD_g6pRgrhg/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => {
+    // 🔥 pindah ke success page
+    showPage(6);
+
+    // 🔥 optional: bersihkan data
+    localStorage.clear();
+  })
+  .catch(() => {
+    alert("Gagal kirim data, coba lagi");
+  });
+}
+function joinWA() {
+  window.open("https://chat.whatsapp.com/BDLzpoNa2s38kn2ZEbAm16", "_blank");
+}
   
 </script>
 
