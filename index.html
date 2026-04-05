@@ -152,6 +152,17 @@
   <button class="back" onclick="showPage(3)">Back</button>
   <button onclick="submitData()">Next</button>
 </div>
+
+  <div id="page5" class="page">
+  <h2>Konfirmasi Data</h2>
+
+  <div class="subtitle">Periksa kembali sebelum melanjutkan</div>
+
+  <div id="reviewBox" style="text-align:left; font-size:14px; line-height:1.6;"></div>
+
+  <button class="back" onclick="showPage(4)">Back</button>
+  <button onclick="submitFinal()">Submit</button>
+</div>
   
 <script>
 
@@ -191,9 +202,30 @@ function showPage(pageNumber) {
       document.getElementById("infoJemaat").textContent =
         "PKB GPIB " + jemaat;
     }
+
+    if (pageNumber === 5) {
+  const mupel = localStorage.getItem("mupel") || "-";
+  const jemaat = localStorage.getItem("jemaat") || "-";
+  const nama = localStorage.getItem("nama") || "-";
+  const wa = localStorage.getItem("wa") || "-";
+  const jabatan = localStorage.getItem("jabatan") || "-";
+  const peran = localStorage.getItem("peran") || "-";
+
+  document.getElementById("reviewBox").innerHTML = `
+    <b>MUPEL:</b><br>${mupel}<br><br>
+    <b>Jemaat:</b><br>${jemaat}<br><br>
+    <b>Nama:</b><br>${nama}<br><br>
+    <b>WhatsApp:</b><br>${wa}<br><br>
+    <b>Jabatan:</b><br>${jabatan}<br><br>
+    <b>Peran:</b><br>${peran}
+  `;
+}
+    
+    
   }
 }
 
+  
 // 🔥 AUTO NEXT MUPEL
 document.getElementById("mupel").addEventListener("change", function() {
   const selected = this.value;
@@ -248,6 +280,7 @@ document.getElementById("jemaat").addEventListener("change", function() {
     return;
   }
 
+    
   // 🔥 SIMPAN
   localStorage.setItem("nama", nama);
   localStorage.setItem("wa", wa);
@@ -255,9 +288,12 @@ document.getElementById("jemaat").addEventListener("change", function() {
   localStorage.setItem("peran", document.getElementById("peran").value);
 
   // 🔥 NEXT PAGE (sementara)
-  alert("Next: Review Page");
-}
+    showPage(5);
 
+}
+function submitFinal() {
+  alert("Data akan dikirim ke Google Sheets & lanjut ke halaman sukses");
+}
 
   
 </script>
