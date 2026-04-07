@@ -723,10 +723,11 @@ function submitFinal(){
   btn.disabled = true;
   btn.textContent = "Mengirim...";
 
+  // 🔥 AMBIL DATA FINAL
   let namaJemaat = localStorage.getItem("namaJemaat");
   let kota = localStorage.getItem("kota");
 
-  // 🔥 BACKUP kalau kosong
+  // 🔥 BACKUP (kalau localStorage gagal)
   if(!namaJemaat){
     var jemaatEl = document.getElementById("jemaat");
     var jemaatVal = jemaatEl ? jemaatEl.value : "";
@@ -738,7 +739,7 @@ function submitFinal(){
     }
   }
 
-  console.log("FINAL DATA:", { namaJemaat, kota }); // 🔥 DEBUG
+  console.log("FINAL DATA:", { namaJemaat, kota }); // DEBUG
 
   const formData = new FormData();
 
@@ -748,6 +749,7 @@ function submitFinal(){
   formData.append("jabatan", localStorage.getItem("jabatan") || "");
   formData.append("peran", localStorage.getItem("peran") || "");
 
+  // 🔥 INI YANG MENENTUKAN
   formData.append("namaJemaat", namaJemaat || "");
   formData.append("kota", kota || "");
 
@@ -766,6 +768,7 @@ function submitFinal(){
   });
 }
 
+    
 window.showPage = showPage;
 window.submitData = submitData;
 window.submitFinal = submitFinal;
