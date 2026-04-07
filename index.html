@@ -65,7 +65,7 @@
 
 <!-- PAGE 1 -->
 <div id="page1" class="page active">
-  <h2>Form PKB GPIB</h2>
+  <h2>Form KSB/KP3 PKB GPIB</h2>
   <p class="subtitle">Khusus bagi KSB/KP3 yang belum bergabung dalam WAG "KSB/KP3 PKB GPIB Sinodal (Aktif)"</p>
   <button onclick="showPage(2)">Mulai</button>
 </div>
@@ -708,7 +708,6 @@ const formData = new FormData();
 
 
 // ✅ TAMBAHKAN DI LUAR LOOP
-formData.append("peran", localStorage.getItem("peran") || "");
 
 
   fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
@@ -736,8 +735,6 @@ function joinWA(){
   window.open("https://chat.whatsapp.com/FjWaQPY95DFIbWuB4wwmAc","_blank");
 }
 
-
-console.log("Jabatan:", jabatan);
   
 </script>
 
