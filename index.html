@@ -710,7 +710,6 @@ if(!jabatan){
 
 // SUBMIT
 let isSubmitting = false;
-
 function submitFinal(){
   if(isSubmitting) return;
   isSubmitting = true;
@@ -719,47 +718,44 @@ function submitFinal(){
   btn.disabled = true;
   btn.textContent = "Mengirim...";
 
-const formData = new FormData();
+  const formData = new FormData();
 
-[
-  "mupel",
-  "nama",
-  "wa",
-  "namaJemaat",
-  "kota",
-  "jabatan",   // ✅ TAMBAH
-  "peran"      // ✅ TAMBAH
-].forEach(k=>{
-  formData.append(k, localStorage.getItem(k) || "");
-});
+  [
+    "mupel",
+    "nama",
+    "wa",
+    "namaJemaat",
+    "kota",
+    "jabatan",
+    "peran"
+  ].forEach(k=>{
+    formData.append(k, localStorage.getItem(k) || "");
+  });
 
- console.log("DATA KIRIM:", {
-  mupel: localStorage.getItem("mupel"),
-  namaJemaat: localStorage.getItem("namaJemaat"),
-  kota: localStorage.getItem("kota")
-});
-// ✅ TAMBAHKAN DI LUAR LOOP
+  console.log("DATA KIRIM:", {
+    mupel: localStorage.getItem("mupel"),
+    namaJemaat: localStorage.getItem("namaJemaat"),
+    kota: localStorage.getItem("kota")
+  });
 
-fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
-  method: "POST",
-  body: formData
-})
-.then(res => res.text()) // ✅ PENTING
-.then(() => {
-  showPage(6);
-  localStorage.clear();
-})
-.catch(err => {
-  console.error(err);
-  alert("Gagal kirim");
-});
-
-  function toggleKP3() {
-  const val = document.getElementById("isKP3").value;
-  document.getElementById("kp3Field").style.display =
-    val === "Ya" ? "block" : "none";
+  // ✅ FETCH HARUS DI SINI
+  fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(() => {
+    showPage(6);
+    localStorage.clear();
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Gagal kirim");
+  });
 }
 
+
+// ✅ TAMBAHKAN DI LUAR LOOP
 
   
 // WA
