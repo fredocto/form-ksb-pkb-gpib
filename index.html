@@ -716,25 +716,22 @@ function submitFinal(){
   btn.disabled = true;
   btn.textContent = "Mengirim...";
 
-  // ✅ ambil dari localStorage dulu
   let namaJemaat = localStorage.getItem("namaJemaat");
   let kota = localStorage.getItem("kota");
 
   // 🔥 BACKUP kalau kosong
   if(!namaJemaat){
     var jemaatEl = document.getElementById("jemaat");
-var jemaatVal = jemaatEl ? jemaatEl.value : "";
+    var jemaatVal = jemaatEl ? jemaatEl.value : "";
 
     if(jemaatVal){
       let parts = jemaatVal.split("||");
       namaJemaat = parts[0];
       kota = parts[1];
-
-      // simpan ulang
-      localStorage.setItem("namaJemaat", namaJemaat);
-      localStorage.setItem("kota", kota);
     }
   }
+
+  console.log("FINAL DATA:", { namaJemaat, kota }); // 🔥 DEBUG
 
   const formData = new FormData();
 
@@ -744,29 +741,22 @@ var jemaatVal = jemaatEl ? jemaatEl.value : "";
   formData.append("jabatan", localStorage.getItem("jabatan") || "");
   formData.append("peran", localStorage.getItem("peran") || "");
 
-  // ✅ kirim hasil final
   formData.append("namaJemaat", namaJemaat || "");
   formData.append("kota", kota || "");
 
-  console.log("DATA KIRIM FINAL:", {
-    namaJemaat,
-    kota
+  fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  })
+  .then(() => {
+    showPage(6);
+    localStorage.clear();
+  })
+  .catch(() => {
+    showPage(6);
+    localStorage.clear();
   });
-
-fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
-  method: "POST",
-  body: formData,
-  mode: "no-cors"
-})
-.then(() => {
-  showPage(6);
-  localStorage.clear();
-})
-.catch(() => {
-  showPage(6);
-  localStorage.clear();
-});
-  
 }
 
 
