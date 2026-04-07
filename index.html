@@ -84,7 +84,7 @@
   <h2>Pilih Jemaat</h2>
   <p id="infoMupel" class="subtitle"></p>
 
-  <select id="jemaat">
+<select id="jemaat" onchange="pilihJemaat(this.value)">
     <option value="">Pilih Jemaat</option>
   </select>
 
@@ -684,6 +684,23 @@ function submitData(){
     return;
   }
 
+function pilihJemaat(val){
+  if(!val) return;
+
+  let parts = val.split("||");
+
+  localStorage.setItem("namaJemaat", parts[0]);
+  localStorage.setItem("kota", parts[1]);
+
+  console.log("SET JEMAAT:", parts[0], parts[1]); // DEBUG
+
+  showPage(4);
+}
+
+// WAJIB supaya bisa dipanggil HTML
+window.pilihJemaat = pilihJemaat;
+
+  
   // ✅ VALIDASI NAMA
   if(!nama){
     alert("Nama wajib");
