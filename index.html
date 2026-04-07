@@ -638,7 +638,7 @@ document.getElementById("mupel").addEventListener("change", function(){
 
   dataJemaat[val].forEach(j=>{
     let opt = document.createElement("option");
-    opt.value = JSON.stringify(j);
+    opt.value = j.nama + "||" + j.kota;
     opt.textContent = `${j.nama} ${j.kota}`.trim();
     jemaatSelect.appendChild(opt);
   });
@@ -655,11 +655,10 @@ document.getElementById("jemaat").addEventListener("change", function(){
   let val = this.value;
   if(!val) return;
 
-  let obj = JSON.parse(val);
+  let parts = val.split("||");
 
-  localStorage.setItem("jemaat", val);
-  localStorage.setItem("namaJemaat", obj.nama);
-  localStorage.setItem("kota", obj.kota);
+  localStorage.setItem("namaJemaat", parts[0]);
+  localStorage.setItem("kota", parts[1]);
 
   showPage(4);
 });
@@ -738,6 +737,8 @@ function submitFinal(){
     kota: localStorage.getItem("kota")
   });
 
+ console.log("namaJemaat:", localStorage.getItem("namaJemaat"));
+  
   // ✅ FETCH HARUS DI SINI
   fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
     method: "POST",
