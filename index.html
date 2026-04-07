@@ -66,7 +66,7 @@
 <!-- PAGE 1 -->
 <div id="page1" class="page active">
   <h2>Form KSB/KP3 PKB GPIB</h2>
-  <p class="subtitle">Khusus bagi KSB/KP3 yang belum bergabung dalam WAG "KSB/KP3 PKB GPIB Sinodal (Aktif)"</p>
+  <p class="subtitle">Khusus bagi KSB/KP3 PKB yang belum bergabung dalam WAG "KSB/KP3 PKB GPIB Sinodal (Aktif)"</p>
   <button onclick="showPage(2)">Mulai</button>
 </div>
 
@@ -733,14 +733,18 @@ const formData = new FormData();
   formData.append(k, localStorage.getItem(k) || "");
 });
 
-
+ console.log("DATA KIRIM:", {
+  mupel: localStorage.getItem("mupel"),
+  namaJemaat: localStorage.getItem("namaJemaat"),
+  kota: localStorage.getItem("kota")
+});
 // ✅ TAMBAHKAN DI LUAR LOOP
 
 
   fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
     method:"POST",
-    body:formData,
-    mode:"no-cors"
+    body:formData
+    
   })
   .then(()=>{
     showPage(6);
@@ -762,6 +766,7 @@ function joinWA(){
   window.open("https://chat.whatsapp.com/FjWaQPY95DFIbWuB4wwmAc","_blank");
 }
 
+ 
   
 </script>
 
