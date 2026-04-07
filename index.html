@@ -652,11 +652,7 @@ document.getElementById("mupel").addEventListener("change", function(){
   showPage(3);
 });
 
-    window.showPage = showPage;
-    
-// JEMAAT CHANGE
-document.getElementById("jemaat").addEventListener("change", function(){
-  let val = this.value;
+    function pilihJemaat(val){
   if(!val) return;
 
   let parts = val.split("||");
@@ -664,10 +660,16 @@ document.getElementById("jemaat").addEventListener("change", function(){
   localStorage.setItem("namaJemaat", parts[0]);
   localStorage.setItem("kota", parts[1]);
 
-  showPage(4);
-});
+  console.log("SET JEMAAT:", parts[0], parts[1]); // DEBUG
 
+  showPage(4);
+}
+
+    
     window.showPage = showPage;
+    
+// JEMAAT CHANGE
+
     
 // VALIDASI
 function submitData(){
@@ -684,18 +686,6 @@ function submitData(){
     return;
   }
 
-function pilihJemaat(val){
-  if(!val) return;
-
-  let parts = val.split("||");
-
-  localStorage.setItem("namaJemaat", parts[0]);
-  localStorage.setItem("kota", parts[1]);
-
-  console.log("SET JEMAAT:", parts[0], parts[1]); // DEBUG
-
-  showPage(4);
-}
 
 // WAJIB supaya bisa dipanggil HTML
 window.pilihJemaat = pilihJemaat;
