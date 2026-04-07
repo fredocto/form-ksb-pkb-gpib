@@ -76,7 +76,6 @@
 
   <select id="mupel">
     <option value="">Pilih MUPEL</option>
-    <option>01 - MUPEL SULSELBARA</option>
   </select>
 </div>
 
@@ -165,6 +164,9 @@ const dataJemaat = {
 {nama:"JEMBRANA",kota:"Negara"}
 
 ]
+
+
+
   
 };
 
@@ -215,6 +217,18 @@ document.getElementById("mupel").addEventListener("change", function(){
     jemaatSelect.appendChild(opt);
   });
 
+  const mupelSelect = document.getElementById("mupel");
+
+Object.keys(dataJemaat).forEach(m => {
+  const opt = document.createElement("option");
+  opt.value = m;
+  opt.textContent = m;
+  mupelSelect.appendChild(opt);
+});
+  
+
+
+  
   showPage(3);
 });
 
