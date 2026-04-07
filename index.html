@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <head>
-<meta property="og:title" content="Form KSB/KP3 PKB GPIB">
-<meta property="og:description" content="Isi data KSB/KP3 PKB dan bergabung dalam WAG Sinodal">
-<meta property="og:image" content="https://raw.githubusercontent.com/dpkbgpib/form-ksb-pkb-gpib/main/og1.png">
-<meta property="og:url" content="https://dpkbgpib.github.io/form-ksb-pkb-gpib/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-</head>
 <head>
   <title>Form PKB GPIB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,142 +10,74 @@
       background: #f4f6f8;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 20px 0;
+      padding: 20px;
       margin: 0;
     }
 
     .card {
       background: white;
-      padding: 40px 30px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 400px;
     }
 
-    .logo {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .logo img {
-      width: 120px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
-.subtitle {
-  font-size: 13px;
-  color: #667;
-  text-align: center;
-  margin-top: -10px;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-    
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 2px; /* 🔥 rapat ke input */
-      font-size: 14px;
-    }
-
-    select, input, textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: #2e7d32;
-      outline: none;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-select, button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-.page {
+    .page {
       display: none;
     }
 
     .active {
       display: block;
+    }
 
+    h2 {
+      text-align: center;
+    }
 
-    
-    button {
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    select, button {
       width: 100%;
       padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    button {
       background: #2e7d32;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 15px;
       cursor: pointer;
-      margin-top: 10px;
-      transition: 0.2s;
     }
 
     button:hover {
       background: #1b5e20;
-      transform: scale(1.02);
     }
 
-    .note {
-      font-size: 12px;
-      color: #777;
-      margin-top: 12px;
-      text-align: center;
+    .back {
+      background: #ccc;
+      color: black;
     }
   </style>
-  
 </head>
 
 <body>
-  
 
 <div class="card">
 
   <!-- 🔵 PAGE 1 -->
   <div id="page1" class="page active">
-<div class="card">
-
-  <div class="logo">
-    <img src="logo.png" alt="PKB GPIB">
-  </div>
-
-  <h2>Form Khusus hanya KSB PKB Jemaat dan atau KP3/KORWIL PKB MUPEL GPIB</h2>
-<p class="subtitle">
-  Khusus bagi KSB/KP3 yang belum bergabung dalam WAG 
-  "KSB/KP3 PKB GPIB Sinodal (Aktif)"
-</p>
+    <h2>Form PKB GPIB</h2>
+    <p class="subtitle">
+      Khusus bagi KSB/KP3 yang belum bergabung dalam WAG
+    </p>
 
     <button onclick="showPage(2)">Mulai</button>
   </div>
@@ -164,37 +88,11 @@ select, button {
 
     <select id="mupel">
       <option value="">Pilih MUPEL</option>
-      <select id="mupel">
-<option>01 - MUPEL SULSELBARA</option>
-  <option>02 - MUPEL BALI-NTB</option>
-  <option>03 - MUPEL KALTIM I</option>
-  <option>04 - MUPEL KALTIM II</option>
-  <option>05 - MUPEL KALTARA BERKAT</option>
-
-  <option>06 - MUPEL KALBAR</option>
-  <option>07 - MUPEL KALSELTENG</option>
-  <option>08 - MUPEL JABAR I</option>
-  <option>09 - MUPEL JABAR II</option>
-  <option>10 - MUPEL JATENG-DIY</option>
-
-  <option>11 - MUPEL JATIM</option>
-  <option>12 - MUPEL JAKARTA PUSAT</option>
-  <option>13 - MUPEL JAKARTA UTARA</option>
-  <option>14 - MUPEL JAKARTA SELATAN</option>
-  <option>15 - MUPEL JAKARTA BARAT</option>
-
-  <option>16 - MUPEL JAKARTA TIMUR</option>
-  <option>17 - MUPEL BEKASI</option>
-  <option>18 - MUPEL BANTEN</option>
-  <option>19 - MUPEL LAMPUNG</option>
-  <option>20 - MUPEL SUMUT-ACEH</option>
-
-  <option>21 - MUPEL SUMSEL</option>
-  <option>22 - MUPEL JAMBI</option>
-  <option>23 - MUPEL KEP. BABEL</option>
-  <option>24 - MUPEL KEPRI</option>
-  <option>25 - MUPEL SARIBU</option>
-      
+      <option>01 - MUPEL SULSELBARA</option>
+      <option>02 - MUPEL BALI-NTB</option>
+      <option>12 - MUPEL JAKARTA PUSAT</option>
+      <option>13 - MUPEL JAKARTA UTARA</option>
+      <option>14 - MUPEL JAKARTA SELATAN</option>
     </select>
   </div>
 
@@ -283,318 +181,9 @@ select, button {
 
 // 🔥 DATA SEDERHANA DULU (TEST)
 const dataJemaat = {
-"01 - MUPEL SULSELBARA": [
-  "BETHANIA Makassar",
-  "BUKIT ZAITUN Makassar",
-  "BAHTERA KASIH Makassar",
-  "IMMANUEL Makassar",
-  "MANGNGAMASEANG Makassar",
-  "PASSAREANG Makassar",
-  "BETHEL Raha",
-  "IMMANUEL Baubau",
-  "IMMANUEL Majene",
-  "IMMANUEL Watampone",
-  "IMMANUEL Parepare",
-  "PELITA BARAS Palu",
-  "SUMBER KASIH Kendari",
-  "KANA TOJENG Gowa",
-  "SOLA FIDE SARUDU Palu",
-  "SINAR KASIH BARAS Pasangkayu"
-],
-
-"02 - MUPEL BALI-NTB": [
-  "EBEN HAEZER Gianyar",
-  "EKKLESIA Tuban, Kuta",
-  "MARANATHA Denpasar",
-  "IMMANUEL Mataram",
-  "PNIEL Singaraja",
-  "SYALOM Denpasar",
-  "IMMANUEL BUNG KARNO Mataram",
-  "KASIH KARUNIA Denpasar",
-  "GETSEMANI Jimbaran",
-  "JEMBRANA Negara"
-],
-
-"03 - MUPEL KALTIM I": [
-  "BUKIT SION Balikpapan",
-  "IMMANUEL Balikpapan",
-  "MARANATHA Balikpapan",
-  "PNIEL Balikpapan",
-  "SYALOOM Balikpapan",
-  "EBEN HAEZER Tana Paser",
-  "KANAAN Kenangan",
-  "GETSEMANI Balikpapan",
-  "BUKIT BENUAS Balikpapan",
-  "SILOAM Long Ikis",
-  "EFFATHA Batu Sopang",
-  "SION SAMUNTAI Samuntai",
-  "SYALOOM Sepinggan"
-],
-
-"04 - MUPEL KALTIM II": [
-  "EBEN HAEZER Samarinda",
-  "IMMANUEL Samarinda",
-  "EFATA Tenggarong",
-  "GLORIA TENGGARONG Tenggarong",
-  "SUMBER KASIH Bontang",
-  "SOLA FIDE Muara Badak",
-  "MARANATHA Sanga-Sanga",
-  "SOLA GRACIA Sebuntal",
-  "PELITA KASIH Sangatta",
-  "ANUGERAH Handil",
-  "MARTURIA Loa Janan",
-  "SION JAHAB Tenggarong",
-  "HEBRON Samarinda",
-  "TELUK DALAM Tenggarong Seberang"
-],
-
-"05 - MUPEL KALTARA BERKAT": [
-  "EFFATHA Pulau Bunyu",
-  "BETLEHEM Kuala Lapang",
-  "HOSIANA Tanjung Redeb, Berau",
-  "MARANATHA Tanjung Selor, Bulungan",
-  "SION Nunukan",
-  "IMMANUEL Tarakan",
-  "IMMANUEL Apau Kayan",
-  "UUNG PENGELESAU Malinau",
-  "ANUGERAH Tarakan",
-  "FETEPAY Tarakan",
-  "SUNGAI SEGAH Segah"
-],
-
-"06 - MUPEL KALBAR": [
-  "BETLEHEM Sei Ambawang",
-  "BETHESDA Ketapang",
-  "EBENHAEZER Ketapang",
-  "IMMANUEL Singkawang",
-  "MARANATHA Sanggau",
-  "PANITAH Anjongan",
-  "SILOAM Pontianak",
-  "SEJAHTERA Sanggau",
-  "MENARA IMAN Sekayam",
-  "ORA ET LABORA Kembayan",
-  "ICHTUS Tumbang Titi",
-  "SYALOOM Sei Kajang",
-  "ANUGERAH Beduai",
-  "PANAMPA KEPAYANG Anjongan",
-  "BUKIT AGAPE Entikong",
-  "MARGAHAYU Rasau Jaya",
-  "EKKLESIA Air Upas",
-  "BALAI BATUAH Marau"
-],
-
-"07 - MUPEL KALSELTENG": [
-  "EFFATHA Banjarbaru",
-  "EBENHAEZER Palangka Raya",
-  "IMMANUEL Kotabaru",
-  "MARANATHA Banjarmasin",
-  "IMMANUEL Landasan Ulin",
-  "SOLA GRATIA Batulicin"
-],
-
-"08 - MUPEL JABAR I": [
-  "BETHEL Bandung",
-  "EFATA Batujajar",
-  "MARANATHA Bandung",
-  "SEJAHTERA Bandung",
-  "SILIH ASIH Bandung",
-  "PNIEL YUDHA WIYOGRHA Dayeuh Kolot",
-  "IMMANUEL Cimahi",
-  "MARANATHA Subang",
-  "GETSEMANI Cirebon",
-  "SYALOOM Cikampek",
-  "WISMA ASIH Lembang"
-],
-
-"09 - MUPEL JABAR II": [
-  "KORNELIUS Bogor",
-  "NEHEMIA Cibogo",
-  "PETRA Bogor",
-  "PENGHARAPAN Cibinong",
-  "SOLA GRATIA Semplak",
-  "ZEBAOTH Bogor",
-  "CIMANGGIS Cimanggis",
-  "IMMANUEL Depok",
-  "PANCARAN KASIH Depok",
-  "PELITA HIDUP Depok",
-  "PANCORAN RAHMAT Depok",
-  "SAWANGAN Depok",
-  "DAMAI SEJAHTERA Bogor",
-  "SHALOM Depok",
-  "GIDEON Cimanggis",
-  "GALILEA Pelabuhan Ratu",
-  "CINERE Depok",
-  "KARTIKA SEJAHTERA Bogor",
-  "TRINITAS Cibubur",
-  "BOJONGGEDE Bogor",
-  "BUKIT SENTUL Sentul",
-  "CIPEUCANG Cipeucang",
-  "CISEENG Ciseeng",
-  "PURA Tajurhalang"
-],
-
-"10 - MUPEL JATENG-DIY": [
-  "EFFATHA Semarang",
-  "FILADELFIA Semarang",
-  "IMMANUEL Semarang",
-  "BETH-EL Magelang",
-  "MARGA MULYA Yogyakarta",
-  "TAMAN SARI Salatiga",
-  "GRIYA MULYA Purworejo",
-  "PENABUR Surakarta",
-  "SION Semarang",
-  "SOLO UTARA Mojosongo",
-  "AYALON Tegal",
-  "GALILEA Cilacap",
-  "AMBARAWA Ambarawa",
-  "BETLEHEM Comal",
-  "CUPUWATU Cupuwatu"
-],
-
-"11 - MUPEL JATIM": [
-  "BAHTERA HAYAT Tanjung Perak, Surabaya",
-  "BUKIT ZAITUN Surabaya",
-  "BUKIT SION Surabaya",
-  "BUKIT KASIH Surabaya",
-  "BUKIT HARAPAN Surabaya",
-  "BHASKARA Surabaya",
-  "CAHAYA KASIH Surabaya",
-  "CAHAYA ANUGERAH Surabaya",
-  "EBEN HAEZER Surabaya",
-  "GENTA KASIH Surabaya",
-  "HOSEA Surabaya",
-  "IMMANUEL Surabaya",
-  "MARANATHA Surabaya",
-  "NAZARETH Surabaya",
-  "PNIEL Surabaya",
-  "SINAI Surabaya",
-  "SEJAHTERA Surabaya",
-  "GALILEA Surabaya",
-  "TORSINA Surabaya",
-  "EFRATA Surabaya",
-
-  "GETSEMANI Malang",
-  "IMMANUEL Malang",
-  "MARGO MULYO Batu, Malang",
-  "SEJAHTERA Malang",
-
-  "AIR KEHIDUPAN Blitar",
-  "EBENHAEZER Blitar",
-
-  "EFFATHA Banyuwangi",
-  "IMMANUEL Banyuwangi",
-
-  "AIR HIDUP Kamal, Bangkalan",
-  "PANCARAN KASIH Sumenep",
-
-  "BETHESDA Sidoarjo",
-  "BAHTERA KASIH Gresik",
-  "GAMALIEL Madiun",
-  "GETSEMANI Jember",
-
-  "IMMANUEL Bangil",
-  "IMMANUEL Bondowoso",
-  "IMMANUEL Kediri",
-  "IMMANUEL Probolinggo",
-  "IMMANUEL Mojokerto",
-
-  "MARANATHA Bojonegoro",
-  "MAHKOTA HAYAT Pamekasan",
-  "PELANGI KASIH Lawang",
-  "PANCARAN KASIH Lumajang",
-  "PNIEL Pasuruan",
-  "SURYA KASIH Situbondo",
-
-  "SHALOM Waru",
-  "TIBERIAS Waru",
-
-  "BENOWO Surabaya",
-  "SYALOOM Banyuwangi"
-],
-
-  
-"12 - MUPEL JAKARTA PUSAT": [
-  "ANUGERAH Jakarta Pusat",
-  "BETHESDA Jakarta Pusat",
-  "BETLEHEM Jakarta Pusat",
-  "BUKIT ZAITUN Jakarta Pusat",
-  "EBENHAEZER Jakarta Pusat",
-  "GIDEON Jakarta Pusat",
-  "HOSIANA Jakarta Pusat",
-  "IMMANUEL Jakarta Pusat",
-  "MARANATHA Jakarta Pusat",
-  "PAULUS Jakarta Pusat",
-  "PETRUS Jakarta Pusat",
-  "PNIEL Jakarta Pusat"
-],
-
-  
-"13 - MUPEL JAKARTA UTARA": [
-  "EIRENE Jakarta Utara",
-  "GETSEMANI Jakarta Utara",
-  "KELAPA GADING Jakarta Utara",
-  "PETRA Jakarta Utara",
-  "TUGU Jakarta Utara",
-  "MENABUR KASIH Jakarta Utara",
-  "BULAK TURI MARUNDA Jakarta Utara"
-],
-
-  
-"14 - MUPEL JAKARTA SELATAN": [
-  "BUKIT MORIA Jakarta Selatan",
-  "EFFATHA Jakarta Selatan",
-  "EKKLESIA Jakarta Selatan",
-  "GIBEON Jakarta Selatan",
-  "KHARISMA Jakarta Selatan",
-  "MARKUS Jakarta Selatan",
-  "PASAR MINGGU Jakarta Selatan",
-  "SEJAHTERA Jakarta Selatan",
-  "SETIABUDI Jakarta Selatan",
-  "SUMBER KASIH Jakarta Selatan"
-],
-
-  
-  "15 - MUPEL JAKARTA BARAT": [
-  "SANGKAKALA Jakarta Barat",
-  "SHALOM Jakarta Barat",
-  "SILO Jakarta Barat",
-  "SILOAM Jakarta Barat",
-  "SION Jakarta Barat",
-  "YAHYA Jakarta Barat"
-],
-
-"16 - MUPEL JAKARTA TIMUR": [
-  "AGAPE Jakarta Timur",
-  "BETHANIA Jakarta Timur",
-  "HOREB Jakarta Timur",
-  "KHARIS Jakarta Timur",
-  "KOINONIA Jakarta Timur",
-  "MARTURIA Jakarta Timur",
-  "MENARA IMAN Jakarta Timur",
-  "NAZARETH Jakarta Timur",
-  "PELITA Jakarta Timur",
-  "PENABUR Jakarta Timur",
-  "SURYA KASIH Jakarta Timur",
-  "TAMAN HARAPAN Jakarta Timur",
-  "TORSINA Jakarta Timur",
-  "MARTIN LUTHER Jakarta Timur",
-  "CAWANG BARU Jakarta Timur"
-],
-  
-  "17 - MUPEL BEKASI": [],
-  "18 - MUPEL BANTEN": [],
-  "19 - MUPEL LAMPUNG": [],
-  "20 - MUPEL SUMUT-ACEH": [],
-
-  "21 - MUPEL SUMSEL": [],
-  "22 - MUPEL JAMBI": [],
-  "23 - MUPEL KEP. BABEL": [],
-  "24 - MUPEL KEPRI": [],
-  "25 - MUPEL SARIBU": []
+  "01 - MUPEL SULSELBARA": ["BETHANIA Makassar", "IMMANUEL Makassar"],
+  "12 - MUPEL JAKARTA PUSAT": ["ANUGERAH Jakarta Pusat", "PAULUS Jakarta Pusat"]
 };
-
-
-  
 
 // 🔥 NAVIGATION
 function showPage(pageNumber) {
