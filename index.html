@@ -747,7 +747,7 @@ function submitFinal(){
   fetch("https://script.google.com/macros/s/AKfycbxDz4MfxvqlwgvXo7ALO-Nid_RulMoDmPL9qu1rrPSadcA7Vs58usxkDTjo1mPUuYlT/exec", {
     method: "POST",
     body: formData,
-    mode: "no-cors"
+  
   })
   .then(() => {
     showPage(6);
