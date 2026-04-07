@@ -664,7 +664,15 @@ document.getElementById("mupel").addEventListener("change", function(){
 
   showPage(4);
 }
+// 🔥 AUTO SELECT JEMAAT PERTAMA
+setTimeout(() => {
+  const jemaatEl = document.getElementById("jemaat");
+  if(jemaatEl && jemaatEl.value){
+    pilihJemaat(jemaatEl.value);
+  }
+}, 100);
 
+    
     window.pilihJemaat = pilihJemaat;
     
 // JEMAAT CHANGE
@@ -741,6 +749,11 @@ function submitFinal(){
       namaJemaat = parts[0];
       kota = parts[1];
     }
+    if(!namaJemaat){
+  alert("Jemaat belum terpilih");
+  showPage(3);
+  return;
+}
   }
 
   console.log("FINAL DATA:", { namaJemaat, kota }); // DEBUG
