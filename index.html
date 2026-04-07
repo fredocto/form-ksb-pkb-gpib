@@ -104,14 +104,37 @@
   <select id="jabatan">
     <option value="">Pilih Jabatan</option>
     <option>Ketua</option>
+    <option>Wakil Ketua</option>
     <option>Sekretaris</option>
+    <option>Wakil Sekretaris</option>
     <option>Bendahara</option>
+    <option>Wakil Bendahara</option>
   </select>
 
   <button class="back" onclick="showPage(3)">Back</button>
   <button onclick="submitData()">Next</button>
 </div>
 
+<div class="field">
+  <label>Apakah Anda Pengurus MUPEL?</label>
+  <select id="isKP3" onchange="toggleKP3()">
+    <option value="Tidak">Tidak</option>
+    <option value="Ya">Ya (KP3/KORWIL)</option>
+  </select>
+</div>
+
+<div class="field" id="kp3Field" style="display:none;">
+  <label>Jabatan di MUPEL</label>
+  <select id="jabatanMupel">
+    <option value="">Pilih Jabatan</option>
+    <option>KP3/KORWIL</option>
+    <option>Wakil KP3</option>
+    <option>Sekretaris</option>
+    <option>Bendahara</option>
+  </select>
+</div>
+  
+  
 <!-- PAGE 5 -->
 <div id="page5" class="page">
   <h2>Konfirmasi</h2>
@@ -650,6 +673,8 @@ function submitData(){
 
   localStorage.setItem("nama", nama);
   localStorage.setItem("wa", wa);
+  localStorage.setItem("isKP3", document.getElementById("isKP3").value);
+localStorage.setItem("jabatanMupel", document.getElementById("jabatanMupel").value);
 
   showPage(5);
 }
@@ -670,6 +695,13 @@ function submitFinal(){
     formData.append(k, localStorage.getItem(k) || "");
   });
 
+Peran MUPEL: ${isKP3 === "Ya" ? jabatanMupel : "Tidak Ada"}
+  
+  const isKP3 = localStorage.getItem("isKP3") || "Tidak";
+const jabatanMupel = localStorage.getItem("jabatanMupel") || "-";
+
+  
+
   fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
     method:"POST",
     body:formData,
@@ -682,11 +714,22 @@ function submitFinal(){
   .catch(()=> alert("Gagal kirim"));
 }
 
+  function toggleKP3() {
+  const val = document.getElementById("isKP3").value;
+  document.getElementById("kp3Field").style.display =
+    val === "Ya" ? "block" : "none";
+}
+
+
+  
 // WA
 function joinWA(){
   window.open("https://chat.whatsapp.com/FjWaQPY95DFIbWuB4wwmAc","_blank");
 }
 
+
+
+  
 </script>
 
 </body>
