@@ -84,7 +84,7 @@
   <h2>Pilih Jemaat</h2>
   <p id="infoMupel" class="subtitle"></p>
 
-  <select id="namajemaat">
+  <select id="jemaat">
     <option value="">Pilih Jemaat</option>
   </select>
 
@@ -616,7 +616,7 @@ if(n===5){
       ${localStorage.getItem("wa")} <br>
       ${localStorage.getItem("jabatan") || "-"} <br><br>
 
-      ${localStorage.getItem("namajemaat")} - ${localStorage.getItem("kota")} <br>
+      ${localStorage.getItem("namaJemaat")} - ${localStorage.getItem("kota")} <br>
       ${localStorage.getItem("mupel")} <br><br>
 
       Peran MUPEL: ${localStorage.getItem("peran") || "Tidak Ada"}
@@ -658,7 +658,7 @@ document.getElementById("jemaat").addEventListener("change", function(){
   let obj = JSON.parse(val);
 
   localStorage.setItem("jemaat", val);
-  localStorage.setItem("namajemaat", obj.nama);
+  localStorage.setItem("namaJemaat", obj.nama);
   localStorage.setItem("kota", obj.kota);
 
   showPage(4);
