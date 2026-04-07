@@ -197,7 +197,7 @@ document.getElementById("mupel").addEventListener("change", function(){
   dataJemaat[val].forEach(j=>{
     let opt = document.createElement("option");
     opt.value = JSON.stringify(j);
-    opt.textContent = j.nama + " " + j.kota;
+    opt.textContent = `${j.nama} ${j.kota}`.trim();
     jemaatSelect.appendChild(opt);
   });
 
