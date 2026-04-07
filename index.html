@@ -164,12 +164,21 @@ const dataJemaat = {
 {nama:"JEMBRANA",kota:"Negara"}
 
 ]
+ 
+};
 
+   const mupelSelect = document.getElementById("mupel");
+
+Object.keys(dataJemaat).forEach(m => {
+  const opt = document.createElement("option");
+  opt.value = m;
+  opt.textContent = m;
+  mupelSelect.appendChild(opt);
+});
+  
 
 
   
-};
-
 // NAVIGATION
 function showPage(n) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
@@ -217,15 +226,7 @@ document.getElementById("mupel").addEventListener("change", function(){
     jemaatSelect.appendChild(opt);
   });
 
-  const mupelSelect = document.getElementById("mupel");
-
-Object.keys(dataJemaat).forEach(m => {
-  const opt = document.createElement("option");
-  opt.value = m;
-  opt.textContent = m;
-  mupelSelect.appendChild(opt);
-});
-  
+ 
 
 
   
