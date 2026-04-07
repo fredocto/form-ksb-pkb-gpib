@@ -111,19 +111,21 @@
     <option>Wakil Bendahara</option>
   </select>
 
+  <!-- ✅ TAMBAHKAN DI SINI -->
+  <select id="peran">
+    <option value="">Peran di MUPEL (Opsional)</option>
+    <option>KP3/KORWIL</option>
+    <option>Wakil KP3</option>
+    <option>Sekretaris</option>
+    <option>Wakil Sekretaris</option>
+    <option>Bendahara</option>
+    <option>Wakil Bendahara</option>
+  </select>
+
   <button class="back" onclick="showPage(3)">Back</button>
   <button onclick="submitData()">Next</button>
 </div>
 
-<select id="peran">
-  <option value="">Tidak Ada</option>
-  <option>KP3/KORWIL</option>
-    <option>Wakil KP3</option>
-    <option>Sekretaris</option>
-   <option>Wakil Sekretaris</option>
-    <option>Bendahara</option>
-   <option>Wakil Bendahara</option>
-</select>
   
   
 <!-- PAGE 5 -->
@@ -620,7 +622,7 @@ function showPage(n) {
     </b>
   `;
 }
-
+}
 
 // MUPEL CHANGE
 document.getElementById("mupel").addEventListener("change", function(){
@@ -687,16 +689,15 @@ function submitFinal(){
   btn.disabled = true;
   btn.textContent = "Mengirim...";
 
-  const formData = new FormData();
-  ["mupel","nama","wa","namaJemaat","kota"].forEach(k=>{
-    formData.append(k, localStorage.getItem(k) || "");
-    formData.append("peran", localStorage.getItem("peran") || "");
-  });
-  
-  const isKP3 = localStorage.getItem("isKP3") || "Tidak";
-const jabatanMupel = localStorage.getItem("jabatanMupel") || "-";
+const formData = new FormData();
 
-  
+["mupel","nama","wa","namaJemaat","kota"].forEach(k=>{
+  formData.append(k, localStorage.getItem(k) || "");
+});
+
+// ✅ TAMBAHKAN DI LUAR LOOP
+formData.append("peran", localStorage.getItem("peran") || "");
+
 
   fetch("https://script.google.com/macros/s/AKfycbwuicLZuRDPf2yrR7x-N-sO9mYXy0Rl3Y-ROerqw-SspRc8370H_RtVb4vCy-xavaQnzw/exec", {
     method:"POST",
