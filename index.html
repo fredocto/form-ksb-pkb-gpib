@@ -670,16 +670,43 @@ function submitData(){
   let wa = document.getElementById("wa").value.trim();
   let jabatan = document.getElementById("jabatan").value;
 
-  if(!nama){ alert("Nama wajib"); return; }
-  if(!wa.match(/^[0-9]{10,15}$/)){ alert("WA tidak valid"); return; }
+  let namaJemaat = localStorage.getItem("namaJemaat");
 
+  // ✅ VALIDASI JEMAAT
+  if(!namaJemaat){
+    alert("Pilih Jemaat terlebih dahulu");
+    showPage(3);
+    return;
+  }
+
+  // ✅ VALIDASI NAMA
+  if(!nama){
+    alert("Nama wajib");
+    return;
+  }
+
+  // ✅ VALIDASI WA
+  if(!wa.match(/^[0-9]{10,15}$/)){
+    alert("WA tidak valid");
+    return;
+  }
+
+if(!jabatan){
+  alert("Pilih Jabatan terlebih dahulu");
+  return;
+}
+
+  
+  // ✅ SIMPAN DATA
   localStorage.setItem("nama", nama);
   localStorage.setItem("wa", wa);
-  localStorage.setItem("jabatan", jabatan); // ✅ TAMBAH INI
+  localStorage.setItem("jabatan", jabatan);
   localStorage.setItem("peran", document.getElementById("peran").value);
 
   showPage(5);
 }
+
+
 
 // SUBMIT
 let isSubmitting = false;
